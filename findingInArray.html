@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="users">
+  
+</div>
+
+
+    <script>
+       // pointing our localStorage to get data from the key store
+        let userDetails = JSON.parse(localStorage .getItem("userInfo"))
+        //alert(userDetails)
+        let userDetails = [
+            {
+                fullName:"Adedeji Taofik",
+                email:"adedejitaofeek01@yahoo.com",
+                tel:"08166275434",
+                company:"ksolutions"
+            },
+
+            {
+                "fullName":"Adedeji AbdulSalam,",
+                "email":"salam@yahoo.com",
+                "tel":"08166274325",
+                "company":"Itec"
+            },
+
+            {
+                fullName:"Adedeji Mardiya,",
+                email:"mama@gmail.com",
+                tel:"09033355225",
+                company:"Itecs"
+            },
+        ]
+
+        //saving our data in local storage
+          //localStorage.setItem('userInfo', JSON.stringify(userDetails))
+
+
+        //to search an element in array using find or filter
+        users = ["taofik", "abdul"]
+        //findUsers = users.find(y => y == "abduls")
+        //console.log(findUsers);
+
+        //finding from array of object
+        userObject =  userDetails.find(obj=> obj.email == "salam@yahoo.com")
+        //console.log(JSON.stringify( userObject));
+
+        
+        showUsers()   // calling the function
+        //to showUsers
+        function showUsers(){
+            userContent = ""
+            for( i = 0; i<userDetails.length; i++ ){
+                 userContent += `
+                 <div>
+                 FullName:${userDetails[i].fullName}<br>
+                 Email   :${userDetails[i].email}<br>
+                 Tel     :${userDetails[i].tel}<br>
+                 Company :${userDetails[i].company}<br>
+                <button onClick="Delete(${i})">Delete</button> <button>Edit</button>
+                <hr>
+
+               </div>
+                 
+                 `
+            }
+            document.getElementById('users').innerHTML = userContent
+        }
+
+        //to delete
+        function Delete(i){
+            userDetails.splice(i,1)
+            localStorage.setItem("userInfo",JSON.stringify(userDetails))
+            showUsers()
+        }
+    </script>
+</body>
+</html>

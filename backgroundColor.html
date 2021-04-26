@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form>
+ 
+    <input type="text" placeholder="enter the value for the principal" id="txt1">
+    <input type="text" placeholder="enter the value for the Rate" id="txt2">
+    <input type="text" placeholder="enter the value for the Time" id="txt3">
+    <input type="button" placeholder="Calculate" id="btn1" value="Calculate" onclick="calculation()">
+
+
+</form>
+
+<p id="label"></p>
+
+
+<script>
+
+    
+
+
+        function calculation(){
+              
+            let a = document.getElementById('txt1').value
+        
+
+        let b = document.getElementById('txt2').value
+        
+
+        let c = document.getElementById('txt3').value
+        
+
+        let d = (Number(a) * Number(b) * Number(c)) / 100
+
+      let f =  document.getElementById("label").innerHTML =    d
+        }
+
+   
+</script>
+
+
+</body>
+</html>

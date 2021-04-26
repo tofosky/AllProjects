@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="todoList.css"> -->
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="margin:auto; background-color:azure; width:50%; height:500px; box-shadow: 2px 4px 8px;">
+        <div class="row">
+          <h4 class="container text-center">Scheduling Task</h4>
+          <div class="container col-10">
+            <input type="text" class="form-control"  id="txt1">
+          </div>
+        </div>
+            <div>
+              <ul id="ul">
+              </ul> 
+            </div>           
+      </div>
+      <script>
+        let data = []
+          let a = document.getElementById('txt1')
+          let ul = document.getElementById('ul')
+              a.addEventListener('blur', function(e){   
+                   e.preventDefault();
+                   let r = this.value
+                      b = document.createElement('li')
+                      b.style.listStyle = 'none'
+                      dd = document.createElement('hr')
+                      bb = document.createElement('input')
+                      bb.type = 'checkbox'
+                      bb.name = 'color'
+                      bb.style.listStyle = 'none'
+                      closeBtn = document.createElement('span')
+                      closeBtn.innerHTML = 'x'
+                      let tagname = document.getElementsByTagName('li')
+                       t = document.createTextNode(r)
+                       b.append(t,bb,closeBtn,dd)
+                       ul.appendChild(b)
+                       data.push(ul)
+                       localStorage.setItem('data', JSON.stringify(data))
+                       this.value = ""
+               })
+
+              
+
+
+             
+
+
+
+
+             
+      </script>
+    
+</body>
+</html>

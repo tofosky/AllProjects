@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="Dashboard.css" >
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="header1">
+       <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle btnAdmin" type="button">
+          Admin
+        </button>
+        <ul class="dropdown-menu admin-item">
+          <li><a class="dropdown-item" href="#">Edit User</a></li>
+          <li><a class="dropdown-item" href="index.html">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="header2">
+        <button  class="btn btn-primary btnNav"><i class="fas fa-bars"></i></button>
+        <h5 id="staffLength" class="text-center"></h5>
+     </div>
+    
+     <div class="sidebar">
+         <a  class="addNew">Add New</a>
+         <p></p>
+         <a href="#">All Staff</a>
+     </div>
+
+     <div class="centered container text-center">
+       <span class="closeBtn">X</span>
+        <form class="">
+          <input type="text" id="hiden" hidden>
+            <input type="text" placeholder="Firstname" id="contact" class="fname"> <input type="text" placeholder="Lastname" id="contact" class="lname"><p></p>
+            <input type="text" placeholder="Middlename" id="contact" class="midname"> <input type="text" placeholder="Department" id="contact" class="dept"><p></p>
+            <input type="text" placeholder="Date of birth" id="contact" class="dob"> <input type="text" placeholder="Employement Date" id="contact" class="doe"><p></p>
+            <input type="text" placeholder="+23466275434" id="contacts" class="numb">
+        <p></p>
+            <input type="button" href="" value="Save New"  class="btn btn-success btn-sm saveBtn" onclick="newStaffs(document.querySelector('.fname').value,document.querySelector('.lname').value, document.querySelector('.midname').value, document.querySelector('.dept').value,document.querySelector('.dob').value,document.querySelector('.numb').value,document.querySelector('.doe').value)">
+            <input type="button" href="" value="Update"  class="btn btn-success btn-sm text-center container" id="updateBtn" onclick="updateStaff()">
+        </form>
+              </div>
+              <div class="contTable">
+
+              </div>
+
+              <!-- <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-2 bg-primary" style="height: 100vh">
+                    <a class="brand text-white">Employee System</a>
+                  </div>
+
+                  <div class="col-md-10 bg-secondary">
+                   
+                      <div class="header">
+                        <h3>Header</h3>
+                      </div>
+                      <div>
+                        
+                        <p>Dashboard shows here</p>
+                      </div>
+                        
+                    </div>
+                  
+                </div>
+              </div> -->
+             
+    <script src="Dashboard.js"></script>
+</body>
+</html>

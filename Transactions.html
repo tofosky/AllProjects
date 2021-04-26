@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+     
+     const pin =1234
+     const accountbalance = 2000
+      //  let ab = accountbalance - c
+    
+     
+
+function REQUEST() {
+    
+
+    let request = prompt(" 1: Airtime-Self .\n  2: Airtime-Others .\n 3:Data .\n 4:Trsf -GTBank. \n 5:Trsf - Others ")
+    if(request == 1){
+        airtimeSelf();
+    } else if(request ==2){
+        airtimeOthers();
+    }else if(request ==3){
+            Data()
+    }else if(request ==4){
+        trsfGTB()
+    }else if(request ==5){
+        trsOthers()
+    }
+    else{
+        REQUEST();
+    }
+}
+
+REQUEST();
+
+       function airtimeSelf() {
+           let c = prompt("Please enter amount");
+           if(c !="" ){
+               let x = prompt("enter your pin to allow the transaction to be completed")
+               let ab = accountbalance - c
+               if(x != pin && ab < c){
+                
+                alert("incorrect pin")
+                   alert("insufficient fund in your account")
+                       
+               }else if( x == pin && ab > c){
+                    
+                    
+                    alert("your request is processing")
+                   alert("your request is successful")
+                   alert( "your old account balance is  #"+ accountbalance+".\n  #  "+ c + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+                }
+
+                else if( x != pin && ab > c){
+                    
+                    alert("incorrect pin")
+                    
+                }
+                else if( x == pin || ab < c){
+                    
+                    alert("insufficient fund")
+                    
+                }
+               else if(x != pin || ab < c){
+                alert("insufficient pin .\n insufficient fund")
+                }
+               
+           } else{
+                    alert("nothing is inputed")
+               }
+       }
+
+
+      // function for airtimeOthers
+            
+       function airtimeOthers() {
+           let d = prompt("Please enter 3rd party mobile number");
+           if(d !== ""){
+               let d = prompt("Please enter an amount")
+               let e = prompt("Enter your  pin  to tansfer the amount to this number with NGN"+ d  )
+               if(e== pin){
+                   alert("your request is processing")
+                   alert("your request is successful")
+                let ab = accountbalance - d
+                alert("#"+ d + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+
+               }else if(e != pin){
+                alert("incorrect pin")
+               }
+            
+           }else if(d ==""){
+                  alert("nothing is typed")
+                  airtimeOthers()
+           }
+       }
+
+
+       function Data() {
+          let f = prompt("Purchase Data For: .\n 1 . Self .\n 2 . 3rd party")
+          if(f ==1){
+              selfData()
+          }else if (f ==2){
+            third3()
+          }
+           
+       }
+
+       function selfData() {
+        let b = prompt("Select MTN Data : .\n 1 - 100mb 1day #100 .\n 2 - 350mb 7days #300 .\n 3 - 1gb 1day #300 .\n 4 - 250mb 14days #500 .\n 5 - 1.5gb 30days #1000 .\n 6 - 2gb 30days #1200 .\n 7 - Next")
+           if(b ==1){
+                alert("your request is processing");
+                //alert("your request is successful")
+                let ab = accountbalance - b
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==2){
+               alert("your request is processing")
+               let ab = accountbalance - b
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==3){
+               alert("your request is processing")
+               let ab = accountbalance - b
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b==4){
+               alert("your request is processing")
+               let ab = accountbalance - b
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==5){
+               alert("your request is processing")
+               let ab = accountbalance - b
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==6){
+               alert("your request is processing")
+               let ab = accountbalance - b
+                alert(+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==7){
+               nextItem1()
+           }else{
+               selfData()
+           }
+       }
+
+              //self data next 1
+       function nextItem1(){
+        let b = prompt(" 1 - 3gb 30days #1500 .\n 2 - 4.5gb 30days #2000.\n 3 - 6gb 30days #2500 .\n 4 - 8gb 30days #3000 .\n 5 - 10gb 30days #3500 .\n 6 - 15gb 30days #5000 .\n 7 - Back .\n 8 -Next")
+           if(b ==1){
+                alert("your request is processing");
+                alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==2){
+               alert("your request is processing")
+               alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==3){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b==4){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==5){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==6){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==7){
+            selfData()
+           }else if (b ==8){
+                nextItem2()
+           }else{
+               nextItem1()
+           }
+       }
+           //self data next2
+       function nextItem2() {
+
+        let b = prompt(" 1 - 20gb 30days #6000 .\n 2 - 40gb 30days #10000.\n 3 - 30gb 30days #13500 .\n 4 - 75gb 30days #15000 .\n 5 - 60gb 30days #20000 .\n 6 - 110gb Monthly Plan #20000 .\n 7 - Back")
+           if(b ==1){
+                alert("your request is processing");
+                alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==2){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==3){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b==4){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==5){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==6){
+               alert("your request is processing")
+               alert("your request is successful")
+                alert("#"+ b + " has been deducted from your account balance \n your account balance is "+ "#"+ab)
+           }else if(b ==7){
+            nextItem1()
+           }else {
+                  nextItem2()
+           }
+           
+       }
+
+
+        // Data for third part number
+
+        function thirdParty() {
+            
+            let h = prompt("Please enter third party mobile number");
+            let b = prompt("Select MTN Data : .\n 1 - 100mb 1day #100 .\n 2 - 350mb 7days #300 .\n 3 - 1gb 1day #300 .\n 4 - 250mb 14days #500 .\n 5 - 1.5gb 30days #1000 .\n 6 - 2gb 30days #1200 .\n 7 - Next")
+            if(b ==1){
+                alert("your request is processing");
+                alert("your request is successful")
+                
+           }else if(b ==2){
+               alert("your request is processing")
+               alert("your request is successful")
+                
+           }else if(b ==3){
+               alert("your request is processing")
+           }else if(b==4){
+               alert("your request is processing")
+               alert("your request is successful")
+               
+           }else if(b ==5){
+               alert("your request is processing")
+               alert("your request is successful")
+                
+           }else if(b ==6){
+               alert("your request is processing")
+               alert("your request is successful")
+                
+           }else if(b ==7){
+               nextItem1()
+           }else{
+               selfData()
+           }
+        }  
+
+
+
+//to transfer
+
+function trsfGTB() {
+
+    let z = prompt("Please enter an amount")
+    let a = prompt("Enter receipient ACCOUNT NUMBER or PHONE NUMBER or SURNAME")
+    let f = prompt("Enter your pin to allow the transaction ")
+    if(f!= pin){
+        alert("incorrect password")
+    }else if(f == pin){
+        alert("your request is processing")
+        alert("your request has ben successful")
+    }
+    
+}
+
+function trsOthers() {
+let z = prompt("Please enter an amount")
+let d = prompt("what type of bank are you transferring to?")
+let a = prompt("Enter receipient ACCOUNT NUMBER or PHONE NUMBER or SURNAME")
+let f = prompt("Enter your pin to allow the transaction ")
+if(f!= pin){
+    alert("incorrect password")
+}else if(f == pin){
+    alert("your request is processing")
+    alert( " #  " +"" + z + "has been transferred to " + d + " Bank "+ (a)+ "successfully")
+}
+
+}
+       
+
+
+    </script>
+    
+</body>
+</html>

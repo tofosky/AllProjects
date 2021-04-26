@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body style="background: black; " id="bg">
+    
+         <div class="row" id="header">
+                 <div class="col-10 bg-info">
+                   <input type="text "  placeholder="search" style="width:115%" id="txt" >
+                 </div>
+
+                 <div class="col-2">
+                    <input type="checkbox" class="float:left" style="margin-left: 160px;" id="toogle" onclick="colorChanging()">
+                    <input type="checkbox" class="float:left"  id="toogle" onclick="colorChangings()">
+                  </div>
+         </div>
+
+         <div class="row text-center" style="margin-top:20px;color:blue; font-size: medium;  " id="body" >
+            <div class="col-4 bg-danger" style="height:30em;">
+              <h3>Content1</h3>
+              <div class="col bg-white"  style="height:15em; margin-left:5px ;">
+                <h5>Tex1</h5>
+              </div>
+            </div>
+
+            <div class="col-4 bg-warning" style="height:30em">
+                <h3>Content2</h3>
+                <div class="col bg-danger"  style="height:15em; margin-left:5px ; " id="cont2">
+                    <ul id="ul">
+                       
+                    </ul>
+              </div>
+              </div>
+
+              <div class="col-4 bg-white" style="height:30em">
+                <h3>Content3</h3>
+                <div class="col bg-warning"  style="height:15em; margin-left:5px ;">
+                    <h5>Tex3</h5>
+              </div>
+              </div>
+
+    </div>
+
+
+<div class="row" id="footer">
+    <div class="col bg-warning text-center" style="margin-top: 60px; height:3em; color: blue; font-size: medium; box-shadow: 2px 4px 8px">
+              <h5>Footer</h5>
+    </div>
+
+</div>
+</div>
+
+<script>
+    let text = document.getElementById('txt')
+    
+    let arr = []
+    
+    text.addEventListener('blur', function(e){
+         e.preventDefault()
+         let val = this.value
+         //arr.push(val)
+         let list = document.createElement('list')
+         let hr = document.createElement('hr')
+
+         list.style.listStyle = 'none'
+         let ul = document.getElementById('ul')
+         t = document.createTextNode(arr.push(val))
+         for(let i = 0; i<arr.length; i++){
+            
+         list.append(arr[i])
+         ul.appendChild(list)
+         
+             console.log(arr[i])
+         }
+         //let br = "<br>"
+         
+         //let container = document.getElementById('cont2').innerHTML = arr +"<br>"
+         this.value = ""
+
+    })
+
+    
+    
+    function colorChanging( checked = true){
+    
+        let body = document.getElementById('bg')
+        let tog = document.getElementById('toogle')
+        if( body.style.background = "black"){
+             body.style.background = "green"      
+        } 
+          
+    }
+
+
+
+    function colorChangings( ){
+    
+    let body = document.getElementById('bg')
+    let tog = document.getElementById('toogle')
+    if( body.style.background = "green"){
+         body.style.background = "black"      
+    } 
+}
+
+    
+
+    
+</script>
+    
+</body>
+</html>

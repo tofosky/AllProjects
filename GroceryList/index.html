@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Goccery List</title>
+</head>
+<body>
+   <div class="container app">
+       <form>
+           <div class="appTitle">
+               <h3 class="text-center title">GROCERY LIST</h3>
+           </div>
+           <div class="formInput text-center">
+              <div class="textField">
+                 <input type="text" placeholder="Enter Value ..." id="textField" style="border: 2px solid blue; margin: 5px; background-color:  rgb(155, 161, 161); width:400px;"><span><i class="fas fa-pencil-alt  btn btn-primary"  id="addBtn" onclick="add(document.getElementById('textField').value)"></i></span>
+              </div>
+           </div>
+           <div class="formData text-center">
+              <ul id="ul" style="list-style: none; margin-left: 280px;"></ul>
+           </div>
+           <div class="clearBtn text-center">
+               <div class="text-center"><button id="clearBtn" onclick='delAll()' style="width: 200px; padding: 5px; border: 2px solid red; color: red; background-color: rgb(155, 161, 161);">Clear Items</button></div>
+           </div>
+       </form>
+   </div>
+   
+    <script src="app.js"></script>
+</body>
+</html>

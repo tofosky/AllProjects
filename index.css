@@ -1,0 +1,40 @@
+#header{
+   background-color: brown;
+   position: relative;
+   /* margin-left: 20%; */
+   text-align: center;
+   margin: 0 auto;
+   padding: 30px;
+   width: 50%;
+ }
+
+ 
+ #content{
+    background-color: grey;
+    position: relative;
+    margin:0 auto;
+    width:50%
+ }
+
+ .li{
+     list-style: none;
+ }
+ 
+ .checked{
+   text-decoration: line-through;
+ }
+
+ .ul{
+    list-style-type: none;
+ }
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 

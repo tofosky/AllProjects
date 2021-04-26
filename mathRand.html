@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Document</title>
+</head>
+
+<style>
+    
+    .correct{
+        background-color: green 
+    }
+    .wrong{
+        background-color: #D91E18;
+    }
+    .hide{
+        display: none;
+    }
+</style>
+<body  id="body" class="body" style="width:100vw;
+        min-height:100vh;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(#d32020, #DC281E);
+        font-family: sans-serif;
+        ">
+   
+    
+   
+    <div class="container" id="mainGame" style="background-color:#f89494; height: 400px; box-shadow: 2px 4px 8px; display: none;"  > 
+        
+        
+        <div class="container">
+<div class="row text-center" >
+    <div class="col-4"><strong><p id="p1"></p></strong></div>
+    <div class="col-4"> <p id="p2">+</p></div>
+    <div class="col-4"> <strong><p id="p3"></p></strong></div>
+</div>
+</div>
+ 
+<div class="row text-center">
+    <div class="col-12">
+      <p id="p4">=</p>
+</div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+ <p id="correct" class="corrects"></p>
+</div>
+</div>
+<div class="row text-center" >
+    <div class="col-12">
+        <input type="text" id="textbox" style="width:70%;   border-top: none; border-left: none; border-right:none; border-bottom: 30px; border-color: blue; text-align: center;"> 
+    </div>  
+    
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+<input type="submit" id="submit" class="btn btn-primary" value="play again"  onclick="reload()" style="width: 70%; margin-top: 100px;">
+</div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+<input type="submit" id="btn-back" class="btn btn-primary" value="Previous"  onclick="previous()" style="width: 70%; margin-top: 30px;">
+</div>
+</div>
+
+
+</div>
+
+
+
+    <script>
+      let correctAn, incorrect, anonymous, divs, a, v,label, label2;
+       reload()
+      function reload(){
+        var b = Math.floor(Math.random()*10) + 1
+        var c = Math.floor(Math.random()*10) + 2
+       a= b;
+       s=c;
+        label = document.getElementById('p1').innerHTML = a
+        label2 = document.getElementById('p3').innerHTML = s
+      v =  b+c 
+     result =  document.getElementById('textbox')
+     result.addEventListener('blur', (e) =>{
+         e.preventDefault()
+        if(result.value == v){
+            correctAn =  document.getElementById('correct').style.color = "green"
+           correctAn =  document.getElementById('correct').innerHTML = "Correct answer"
+}else if (result.value ==""){
+    anonymous =  document.getElementsByClassName('corrects')[0].style.color = "purple"
+    anonymous = document.getElementsByClassName('corrects')[0].innerHTML = "please enter a value to the text field"
+}else if(result.value !== v){
+     incorrect =  document.getElementsByClassName('corrects')[0].style.color = "red"
+     incorrect = document.getElementsByClassName('corrects')[0].innerHTML = "incorrect answer"
+      }
+     })
+     result.value = ""
+     correctAn =  document.getElementById('correct')
+     correctAn.innerHTML=""
+      }
+    
+    startUp()
+    function startUp(){
+           divs =  document.createElement('div')
+           exit = document.createElement('button')
+           //exit.style.backgroundColor = "Red"
+           exit.setAttribute("class", "btn btn-danger btn-sm")
+           exit.style.width = "30%"
+           exit.style.height = "5%";
+           exit.style.float = "right";
+           exit.style.margin = "472px 4px 8px"  
+            exit.addEventListener('click',(e) =>{
+               e.preventDefault();
+               divs.style.display = "none"
+               document.getElementById("body").style.background = "linear-gradient(#fff,#fff)"
+               
+            })
+           let  exitText = document.createTextNode("Exit Game")
+           exit.append(exitText)
+           btn = document.createElement('button')
+          btn.setAttribute("class", "btn btn-info btn-sm")
+          btn.style.width = "30%"
+          btn.style.height = "5%";
+          btn.style.margin= "8px"
+
+          btn.addEventListener('click', (e) =>{
+             e.preventDefault()
+             document.getElementById("mainGame").style.display ="block"
+             divs.style.display = "none"
+          })
+       divs.style.backgroundColor = "blue";
+       divs.style.width = "400px";
+       divs.style.height = "500px"
+       divs.style.boxShadow = "2px 4px 8px"
+       let  texts = document.createTextNode("Play Game")
+       btn.append(texts)
+       divs.append(btn,exit)
+       bdy =document.getElementById("body").appendChild(divs) 
+    }
+
+    function previous(){
+         btn_back = document.getElementById('btn-back')
+        btn_back.addEventListener('click',(e) =>{
+             e.preventDefault()
+             divs.setAttribute('id', "startup")
+             document.getElementById("startup").style.display ="block"
+             document.getElementById("mainGame").style.display ="none"
+             console.log(e);
+        })
+    } 
+    </script>
+</body>
+</html>

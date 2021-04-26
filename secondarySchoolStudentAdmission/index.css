@@ -1,0 +1,106 @@
+body{
+    background-color: whitesmoke;
+}
+
+
+#head1{
+    background-color: white;
+    font-size: 12px;
+    padding: 5px;  
+}
+
+#head11{
+    box-shadow: 2px 2px 2px;
+    border-radius: 10px;
+}
+
+
+#heading{
+    color: black; 
+     padding:10px ;
+}
+
+
+
+.btn{
+    min-height: 10px;
+}
+
+.cont-left{
+    background-color: white;
+    color: black;
+    height:650px;
+    float: left;
+    margin-top:10px;
+    overflow: hidden;
+    
+}
+
+#carouselExampleControls{
+    padding: 10px;
+}
+
+.cont-right{
+    background-color:white;
+    color: black;
+    width:10%;
+    height:650px;
+    margin-top:10px;
+}
+
+.cont-center{
+    background-color:  white;
+    margin-top:10px;
+}
+
+.cont-fotter{
+    margin-top:10px;
+    padding:10px;
+    color: white;
+}
+
+#h5{
+    margin-top:20px;
+    color:black
+}
+
+#inner-text2{
+    font-size: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:5px
+}
+
+#inner-text3{
+    margin-top:5px
+}
+
+#inner-text4{
+    font-size: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:5px
+}
+
+#links{
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+}
+
+#t1{
+    width: 300px;
+    
+}
+
+#btnContinue{
+    width: 640px;
+    
+}
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- buttons -->
+<input type="button" onclick="btnClick1()" value="A" >
+<input type="button" onclick="btnClick2()"  value="B">
+<input type="button" onclick="btnClick3()"  value="C">
+<input type="button" onclick="btnClick4()"  value="D" id="btn4">
+
+<!-- cont1 -->
+<div id="main" style="background-color: blue; color: yellow;">
+
+</div>
+
+<!-- cont2 -->
+<div id="main2" style="background-color: red; color: yellow;">
+
+</div>
+
+<!-- cont3 -->
+<div id="main3" style="background-color: rgb(128, 221, 22); color: rgb(51, 51, 13);">
+
+</div>
+
+<!-- cont4 -->
+<div id="main4" style="background-color: rgb(167, 142, 142); color: palegreen;">
+
+</div>
+
+
+
+
+    <!-- the main brain of the program -->
+    <script>
+
+        let   alphabets = ['A','B','C','D']
+        //alphabets.splice(0,1)
+        console.log(alphabets)
+        
+
+  let main = document.getElementById('main')
+  
+         //btnA
+        function btnClick1() {
+              let i ;
+            for(i= 0; i<alphabets.length; alphabets++){
+               
+              main.innerHTML = alphabets[i]
+              console.log(alphabets[i])
+
+
+            }
+      
+        }
+
+
+           //btnB
+
+        function btnClick2() {
+              let k ;
+            for(k= 1; k<alphabets.length; alphabets++){
+               
+              main2.innerHTML = alphabets[k]
+              console.log(alphabets[k])
+               alert(alphabets[k])
+
+
+            }
+      
+         }
+
+
+
+         function btnClick3() {
+              let k ;
+            for(k= 2; k<alphabets.length; alphabets++){
+               
+              main3.innerHTML = alphabets[k]
+              console.log(alphabets[k])
+              
+
+            }
+      
+         }
+
+
+
+         function btnClick4() {
+             let input = document.getElementById('btn4')
+             input.value.style="display:hidden"
+              let k ;
+            for(k= 3; k<alphabets.length; alphabets++){
+               
+              main4.innerHTML = alphabets[k]
+              console.log(alphabets[k])
+
+
+
+
+            }
+      
+         }
+
+        
+    </script>
+</body>
+</html>

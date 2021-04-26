@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css" >
+   
+    
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <div class="container" style="background-color: blue; padding-right: 50px; width: 300px;">
+        <div class="form" style="margin-left: 33%">
+             <form action="">
+                 <div class="form-group">
+                    <input type="text" placeholder="Username" id="txt1">
+                 </div>
+
+
+                 <div class="form-group">
+                    <input type=""  placeholder="password" id="txt2">
+                 </div>
+                 
+
+                 <div class="form-group">
+                    <input type="button" value="Submit" id="btn1" onclick="check()">
+                 </div>
+      
+             </form>
+
+      </div>
+
+    </div> -->
+
+
+
+
+
+
+    <div class="container" style="background-color: blue; padding-right: 50px; width: 300px;">
+        <div class="form" style="margin-left: 33%">
+             <form action="">
+                 <div class="form-group">
+                    <input type="text" placeholder="Username" id="txt1">
+                 </div>
+
+
+                 <div class="form-group">
+                    <input type="password"  placeholder="password" id="txt2">
+                 </div>
+                 
+
+                 <div class="form-group">
+                    <input type="button" value="Submit" id="btn1" onclick="check()">
+                 </div>
+      
+             </form>
+
+      </div>
+
+    </div>
+
+    <div>
+        <p id="paragraph">Result1</p>
+        <p id="pag">Result2</p>
+    </div>
+
+   
+
+    <script>
+     
+        function check(){
+        let uname = document.getElementById("txt1")
+            let pass = document.getElementById("txt2")
+               
+               let para = document.getElementById("paragraph").innerHTML= "Username :" + uname.value  
+               let paras = document.getElementById("pag").innerHTML= "Password :" + pass.value  
+               console.log(para)
+               console.log(paras)
+               
+        }
+
+        
+        
+    </script>
+
+
+
+   
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style=" padding-right: 50px; width: 300px;">
+        <div class="form" style="margin-left: 33%">
+             <form action="">
+                 <div class="form-group">
+                    <input type="text" placeholder="UserName" id="txt1">
+                 </div>
+
+
+                 <div class="form-group">
+                    <input type="text" placeholder="Password" id="txt2">
+                 </div>
+
+                 <div class="form-group">
+                    <input type="button" value="Login" id="btn1" onclick="validation()">
+                 </div>
+      
+             </form>
+
+      </div>
+
+    </div>
+
+
+    <script>
+  
+   function validation(){  let a = document.getElementById('txt1').value
+  let b = document.getElementById('txt2').value
+
+    if(a == "michael" && b == "mikel1234"){
+        alert("login successful")
+    }else{
+        alert("Login failed")
+    }  
+}
+
+    </script>
+
+
+
+</body>
+</html>

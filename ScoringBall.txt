@@ -1,0 +1,21 @@
+ Purpose: To scrore a goal
+
+ you must be on the field
+
+ check if you are not with the jersey and boot
+ 
+  if you are equipped with the tools
+
+ you must receive the ball
+
+ if not received
+
+ you must be able to snatch the ball from your opponent
+
+ if received
+
+ you must be able to stay fit and encounter the opponent
+
+ head toward the goal post
+
+ then scrore the goal

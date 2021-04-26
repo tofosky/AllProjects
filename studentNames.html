@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.min.css" >
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="container" style=" padding-right: 50px; width: 300px;">
+        <div class="form" style="margin-left: 33%">
+             <form action="">
+                 <div class="form-group">
+                    <input type="text" placeholder="StudentName" id="txt1" >
+                 </div>
+
+                 <div class="form-group">
+                    <input type="button" value="Show" id="btn1" onclick="check()">
+                 </div>
+      
+             </form>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <div>
+        <p id="paragraph">words</p>
+           
+    </div>
+
+   
+
+    <script>
+        let f = 0;
+         let names = []
+         
+
+     
+          function check(){
+              let x;
+         let a = "<p/>"
+          names[f] = document.getElementById("txt1").value
+
+          f++
+      
+          for(x = 0; x<names.length; x++){
+          
+              
+           
+           console.log(names)
+            a +=names[x] + "<br/>"
+
+          }
+          document.getElementById('paragraph').innerHTML = a
+          }
+
+
+
+
+
+
+         
+        //     // let pass = document.getElementById("txt2")
+               
+        //        let cont = document.getElementById("paragraph").innerHTML= stu.value  
+        //        cont =  names.push(cont)
+        //        console.log(cont);
+
+    //   let   names = []
+
+    //   let b = names.push(stu)
+    //   console.log(names)
+    //   //alert(names)
+    //   let cont = document.getElementById("paragraph").innerHTML=  stu
+
+    //     //console.log(names)
+
+    //     // for(i = 2 ; i< names.length; i++){
+    //     //     alert(names.push("bola"))
+    //     //     console.log(names)
+    //     // }        
+               
+    //     }
+
+
+
+     //event listener
+        // let  input = document.querySelector('input');
+        // let label = document.getElementById('paragraph')
+
+        // input.addEventListener('input', coma);
+
+        // function coma(e){
+        //     label.textContent = e .target.value;
+        // }
+        
+</script>
+
+</body>
+</html>

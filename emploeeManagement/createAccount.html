@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  type="text/css" href="createAccount.css" >
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <title>Create Account</title>
+</head>
+<body id="body">
+    <div class="container1">
+    <img id="image1" class="img-fluid" src="./images/home.jpg">
+    <h6 id="title">EMPLOYEE MANAGEMENT SYSTEM</h6>
+    <div class="centered text-center">
+        <h3>CREATE AN ACCOUNT</h3>
+        <form class="createAnAccountPage">
+            <input type="text" placeholder="Full Name" class="fullname" required><P></P>
+            <input type="email" placeholder="Email" class="email" required><P></P>
+            <input type="text" placeholder="User Name" class="username" required><P></P>
+            <input type="password" placeholder="Password" class="password1" required><p></p>
+            <input type="password" placeholder="Password (Confirm)" class="password2" required><p></p>
+            <a  type="button" class="btn btn-success createAccountBtn" onclick="createAccountBtns(document.querySelector('.fullname').value,document.querySelector('.email').value,document.querySelector('.username').value,document.querySelector('.password1').value,document.querySelector('.password2').value)">CREATE AN ACCOUNT</a><p></p>
+            <p>Already have an account?</p><p></p>
+            <a class="loginBtn">LOG IN</a>
+        </form>
+              </div>
+</div>
+    <script src="createAccount.js"></script>
+</body>
+</html>

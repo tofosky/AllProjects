@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.min.css">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <section>
+    <form id="form">   
+    <div class="row" id="header">
+        <h5 id="h5">TODO LIST</h5>
+    <div class="col">
+        <input type="text" id="position" hidden>
+      <input type="text" id="input" placeholder="Enter your todo list" autocomplete="off" >
+      <span><i class="fas fa-plus-circle btn btn-primary" id="btn" onClick="add(document.getElementById('input').value)"></i></span>
+      
+      <span><button id="btn2" onClick="update()" style="display:none;">Update</button></span> <p></p>
+      <p id="len">Total Task:</p>
+      
+    </div>
+    </div>
+    <div id="content">
+        <ul id="ul" class="ul"> </ul>
+       </div>
+      
+    </form>
+</section>
+
+    <script>
+        let ul = document.querySelector('.ul')
+        let todoList = []
+     //todoList = JSON.parse(localStorage.getItem("newData"))
+
+        function add(item, length){
+            if(item!=""){   
+            newInput = {
+                      id    :Date.now(),
+                    value   : item,
+                completed   :false,
+                // total        :label
+            }
+            todoList.push(newInput)
+            localStorage.setItem("newData",JSON.stringify(todoList))
+            var length = todoList.length
+             let label =  document.getElementById('len').innerHTML = "Total task :" +(length*100)/10 + '%'
+            displayInfo()
+            document.getElementById('input').value = ""
+           
+        }else{
+            return alert('nothing inputed in the field')
+        }
+        }
+        
+        displayInfo()
+        
+        
+        function displayInfo(){
+            ul.innerHTML = ''
+           for(i=0;i<todoList.length;i++){
+                //const checked = todoList[i].completed ? 'checked' : false;
+                const li = document.createElement('li')
+                li.setAttribute('class', 'item');
+                // if(todoList[i].completed == true){
+                //     li.classList.toggle('checked')
+                // }
+               li.setAttribute('data-key', todoList[i].id)  
+                li.innerHTML = `
+                               <input type='checkbox' class='checkbox'>
+                               ${todoList[i].value} 
+                               <span><button onclick="del(${i})" id='sp'  id='delete' ><i class="fas fa-trash" ></i></button></span>
+                               <i class="fas fa-edit" onclick="edit(${i})"   ></i>
+                               `;
+                               ul.append(li)
+            };  
+        }
+
+        
+
+        // to delete a task
+        function del(id){
+            
+            confirmation = confirm("Delete selected item ?")
+            if(confirmation == true){
+                todoList.splice(id,1);
+                localStorage.setItem("newData",JSON.stringify(todoList))
+                var length = todoList.length
+             let label =  document.getElementById('len').innerHTML = "Total task :" +(length*100)/10 + '%'
+                displayInfo()            }
+                         }
+
+ //to edit a task
+        function edit(id){
+            confirmation = confirm("Are you sure you want to edit ?")
+            if(confirmation == true){
+            infoRecord = todoList[id]
+            document.getElementById("input").value = infoRecord.value
+            document.getElementById('btn2').style.display = "inline"
+            document.getElementById("position").value = id
+                                   }
+                        }
+
+        function update(){
+            ki= document.getElementById('position').value
+            let updateRecord = 
+            {
+                "value" : document.getElementById('input').value,
+                'id'    :Date.now(),
+                'completed'   :false,
+            } 
+            todoList[ki] = updateRecord
+            localStorage.setItem("newData",JSON.stringify(todoList))
+            displayInfo()
+           }
+
+                
+            
+        
+                 
+           
+    </script>
+</body>
+</html>

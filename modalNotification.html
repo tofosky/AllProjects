@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <form>
+
+        <div class="row">
+            <div class="col">
+                <input type="file" id="fil">
+              </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Firstname" id="txt1">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Lastname" id="txt2">
+              </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="button" id="btn1" onclick="btnClicked()" value="Submit">
+                
+              </div>
+        </div>
+      </form>
+
+
+
+      <div  id="cont"    style="display:none; box-sizing: border-box; background: yellow;width: 700px;height: 300px; margin: 50px auto;">
+             <div class="modal-title" style="background: cornflowerblue;">
+                     <h3>Notify</h3>
+             </div>
+
+             <div class="modal-title" style="background: cornsilk; height: 220px;">
+              <img id="image" src="">
+                <h3 id="msgBody">body</h3>
+        </div>
+
+        <div class="modal-title" style="background: blue; margin-top:5px;">
+            <input type="button"  id="btnModal" onclick="hide()" value="close">
+    </div>
+
+                 </div>
+             
+     
+
+
+                 <script>
+
+                   let butn = document.getElementById('btn1')
+                   let txt1 = document.getElementById('txt1')
+                   let pass = document.getElementById('txt2')
+                   let modals = document.getElementById('cont')
+                   let picx = document.getElementById('fil').value
+                   
+
+                  
+         
+
+              function btnClicked(){
+                   if(txt1.value !="" && txt2.value!="" && picx.value!=""){
+                       display()
+
+                   }else{
+                     hide()
+                   }
+                  }
+
+         function display(){
+           modals .style.display = "block"
+
+            picx = document.getElementById('fil').value
+            console.log(picx)
+            
+            
+           let imgHolder = document.getElementById('image').append(picx)
+           
+           let firstName = document.getElementById('txt1').value
+                //firstName.value
+
+            let secondName = document.getElementById('txt2').value
+                //secondName.value
+
+                let modalMsg = document.getElementById('msgBody').innerHTML = "Hello Mr" +"\n" + firstName +"\n" + secondName   
+           
+
+           console.log(modals)
+        }       
+
+          function hide(){
+            modals .style.display = "none"
+            
+          }
+
+
+       
+
+                 </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="p1"></p>
+    <p id="p2"></p><hr>
+    <p id="p3"></p><hr>
+    <p id="p4"></p><hr>
+    <p id="p5"></p>
+    <p id="p6"></p><hr>
+    <span id="p7"></span>
+    <script>
+        const kSolutionsStudent = [
+                                   {hobbies:["eating","dancing"],
+                                    name:"Taofeek",
+                                    age : 30,
+                                    location:"Bwari"  
+                                    },
+
+                                    {hobbies:["praying"],
+                                    name:"Bashir",
+                                    age : 16,
+                                    location:"Kubwa"  
+                                    },
+
+                                    {hobbies:["smiling","trading"],
+                                    name:"Emmanuel",
+                                    age : 5,
+                                    location:"Zone 6"  
+                                    },
+
+                                    {totalNumberofStudent : 10},
+
+                                      "This is a dummey test",
+                                    ] 
+
+                                    var len = kSolutionsStudent.length
+                                   // console.log("the length of the array is :" + len);
+                                    document.getElementById('p7').innerHTML = len
+                                      var count = 0;
+                                   kSolutionsStudent.forEach(item =>{
+                                       if(typeof item =="object"){
+                                           return count++
+                                           
+                                       }
+                                       console.log(count);
+                                   })
+
+                                   let div = (count/len) * 100
+
+                                   document.getElementById('p7').innerHTML = "the percentage of the object in the array is :" + div + "%"
+
+
+                                    
+
+    //accessing the total number of students in the array of object
+   let text = JSON.stringify(kSolutionsStudent[3].totalNumberofStudent)
+   document.getElementById('p1').innerHTML ="total number of students :" + text
+
+   //accessing the fourth element in the array
+   let texts = JSON.stringify(kSolutionsStudent[3])
+   document.getElementById('p3').innerHTML ="the fourth element in the array is :" + texts
+
+   //accessing names of the array of an object
+   findNamess = kSolutionsStudent.map(names=>names.name)
+   document.getElementById('p4').innerHTML =JSON.stringify("names in the element of the array object:" +findNamess) 
+
+   //accessing the hobbies of the array of an object
+   hobbiesFind = kSolutionsStudent.map(names=>names.hobbies)
+   document.getElementById('p6').innerHTML = JSON.stringify("hobbies in the element of the array object :" +hobbiesFind)
+    </script>
+</body>
+</html>
