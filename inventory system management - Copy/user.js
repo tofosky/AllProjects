@@ -1,7 +1,7 @@
 let addUserBtn = document.querySelector(".addUserBtn")
 let modal = document.querySelector(".modal")
 let clos = document.querySelector(".btn-close")
-let Images = document.querySelector("#image");
+let Images = document.getElementById("image");
 let FirstName = document.querySelector("#fn");
 let LastName = document.querySelector("#ln");
 let UserName = document.querySelector("#un");
@@ -69,7 +69,7 @@ add.addEventListener("click", (e) =>{
     e.preventDefault();
     if(text.value!="" && FirstName.value!="" && LastName.value!="" && UserName.value!="" && Email.value!="" && Password.value!="" ){
         userObj = {
-            Image: text.value,
+            Image: text.value.replace("C:\\fakepath\\", ""),
             FirstName:     FirstName.value,
             LastName:      LastName.value,
             UserName:      UserName.value,
@@ -82,6 +82,7 @@ add.addEventListener("click", (e) =>{
         // let total = Users.length;
         // totalUsers.innerHTML = total;
         displayUsers()
+        console.log(text.value.replace("C:\\fakepath\\", ""));
         //alert("successfull")
         text.value="", FirstName.value = "", LastName.value = "", Email.value = "" , Password.value = ""  
 }else{
@@ -96,7 +97,7 @@ function displayUsers(){
     for(i=0;i<Users.length;i++){
      tb.innerHTML +=`
           <th scope="row">${i+1}</th>
-           <td><img src=${Users[i].Image.replace("C:\\fakepath\\", "")} style='width:50px; height:50px'></td>
+           <td><img src=./${Users[i].Image} style='width:50px; height:50px'></td>
            <td>${Users[i].FirstName}</td>
            <td>${Users[i].LastName}</td>
            <td>${Users[i].UserName}</td>
